@@ -77,8 +77,8 @@ class D14j {
 		var desc = StringTools.htmlUnescape(_desc);
 
 		// get the link no using a regex hack
-		var tpat = ~/^<table><tr><td>NO<\/td><td>(\d+)<\/td>/;
-		if (!tpat.match(desc)) error('Link ${getElemName(link)}: cannot get NO from description');
+		var tpat = ~/<td>NO<\/td><td>(\d+)<\/td>/;
+		if (!tpat.match(desc)) error('Link ${getElemName(link)}: cannot get NO from description\n\n$desc');
 		return tpat.matched(1);
 	}
 
